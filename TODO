@@ -1,0 +1,11 @@
+
+issues to open:
+ ✔ Alterar versão para 0.0.1 @done (15-04-06 16:05)
+ ☐ gulp run task after load
+ ☐ substituir o lodash pelo [ramdajs](http://ramdajs.com/)?
+ ☐ Adicionar Azkfile.js
+ ☐ Trocar Q por bluebird
+ ☐ [Prevent errors from breaking / crashing gulp watch](http://stackoverflow.com/a/23973536)
+
+  Adicionar suporte ao .env:
+   ☐ Adicionar `.env` ao .gitignore
