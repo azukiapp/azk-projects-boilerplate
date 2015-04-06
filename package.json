@@ -4,6 +4,7 @@
   "description": "azk-projects-boilerplate",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "gulp mocha",
     "patch": "npm test && npm version patch && npm publish && git push"
   },
