@@ -1,4 +1,4 @@
-import { _ } from 'azk-core';
+var R = require('ramda');
 
 /**
  * azk-projects-boilerplate ES6 class example
@@ -27,7 +27,7 @@ class SampleClass {
     }
 
     var concated_list = this._initial_list.concat(list);
-    var max = _.max(concated_list);
+    var max = R.max(concated_list);
     return max;
   }
 

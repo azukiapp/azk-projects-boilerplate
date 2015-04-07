@@ -6,7 +6,6 @@ import SampleClass from '../src/sample-class';
  * uses mocha and chai
  */
 describe("SampleClass", function() {
-
   var sampleClass;
 
   beforeEach(function () {
@@ -40,5 +39,4 @@ describe("SampleClass", function() {
     var result = sampleClass.getMaxNumber();
     h.expect(result).to.equal(null);
   });
-
 });

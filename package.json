@@ -24,29 +24,13 @@
   },
   "homepage": "https://github.com/azukiapp/azk-projects-boilerplate",
   "dependencies": {
-    "azk-core": "^1.0.4",
-    "babel": "^4.7.12",
+    "bluebird": "^2.9.24",
     "colors": "^1.0.3",
-    "crypto": "0.0.3",
-    "lodash": "^3.5.0",
     "nopt": "^3.0.1",
-    "printf": "^0.2.1",
-    "q": "^1.2.0",
-    "source-map-support": "^0.2.10"
+    "ramda": "^0.13.0"
   },
   "devDependencies": {
-    "chai": "^2.1.2",
-    "chai-as-promised": "^4.3.0",
-    "chai-things": "^0.2.0",
-    "gulp": "^3.8.11",
-    "gulp-babel": "^4.0.0",
-    "gulp-jscs": "^1.4.0",
-    "gulp-jshint": "^1.9.2",
-    "gulp-mocha": "^2.0.0",
-    "gulp-sourcemaps": "^1.5.0",
-    "jshint-stylish": "^1.0.1",
-    "rimraf": "^2.3.2",
-    "yargs": "^3.5.4"
+    "azk-dev": "git://github.com/gullitmiranda/azk-dev"
   },
   "engineStrict": true,
   "engines": {

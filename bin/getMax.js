@@ -6,31 +6,31 @@
   or execute at command line with ./bin/getMax.js
  */
 
-var _ = require('lodash');
+var R = require('ramda');
 var SampleClass = require('../lib/src/sample-class');
 var sampleClass = new SampleClass();
 
 // https://www.npmjs.com/package/nopt
-var nopt     = require('nopt');
+var nopt = require('nopt');
 
-var knownOpts  =  {
-                    'number' : [Number, Array],
-                    'help'   : Boolean,
-                    'verbose'   : Boolean,
-                  };
+var knownOpts = {
+  'number': [Number, Array],
+  'help': Boolean,
+  'verbose': Boolean,
+};
 
-var shortHands =  {
-                    'n' : ['--number'],
-                    '?' : ['--help'],
-                    'h' : ['--help'],
-                    'v' : ['--verbose'],
-                  };
+var shortHands = {
+  'n': ['--number'],
+  '?': ['--help'],
+  'h': ['--help'],
+  'v': ['--verbose'],
+};
 
-             // everything is optional.
-             // knownOpts and shorthands default to {}
-             // arg list defaults to process.argv
-             // slice defaults to 2
-var parsed     = nopt(knownOpts, shortHands, process.argv, 2);
+// everything is optional.
+// knownOpts and shorthands default to {}
+// arg list defaults to process.argv
+// slice defaults to 2
+var parsed = nopt(knownOpts, shortHands, process.argv, 2);
 
 if (parsed.help || parsed.argv.original.length === 0) {
   var usage_message = ['',
@@ -50,9 +50,11 @@ if (parsed.help || parsed.argv.original.length === 0) {
     '   $ getMax --number 1 --number 2 --number 3 --number 4 --number 5',
     '   $ getMax 1 2 3 4 5',
     '   $ getMax 1 -n 2 3 --number 4 5',
-    ''].join('\n');
+    ''
+  ].join('\n');
+
   console.log(usage_message);
-  return;
+  return false;
 }
 
 var remain_numbers;
@@ -64,24 +66,28 @@ var is_verbose = parsed.verbose || false;
 // verbose
 var util = require('util');
 var inspect = function (data) {
-  console.log('   ' + util.inspect(data, { showHidden:false, colors:true }));
+  console.log('   ' + util.inspect(data, {
+    showHidden: false,
+    colors: true
+  }));
 };
 
 is_verbose && console.log('\n parsed nopt args:');
 is_verbose && inspect(parsed);
 
 // remain: convert strings to numbers
-if (_.isArray(parsed.argv.remain)) {
-  remain_numbers = _.map(parsed.argv.remain, function(item) {
+if (R.isArrayLike(parsed.argv.remain)) {
+  var toNumber = function (item) {
     return Number(item);
-  });
+  };
+  remain_numbers = R.map(toNumber, parsed.argv.remain);
 }
 
-if (_.isArray(parsed.number) && _.isArray(remain_numbers)) {
+if (R.isArrayLike(parsed.number) && R.isArrayLike(remain_numbers)) {
   all_numbers = parsed.number.concat(remain_numbers);
-} else if (_.isArray(parsed.number)) {
+} else if (R.isArrayLike(parsed.number)) {
   all_numbers = parsed.number;
-} else if (_.isArray(remain_numbers)) {
+} else if (R.isArrayLike(remain_numbers)) {
   all_numbers = remain_numbers;
 }
 
