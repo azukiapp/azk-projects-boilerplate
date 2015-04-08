@@ -5,4 +5,6 @@ var azk_gulp = require('azk-dev/gulp')({
 
 var gulp = azk_gulp.gulp;
 
-gulp.task('default', 'run lint and all tests', ['lint', 'test']);
+gulp.task('sample', 'This is a sample task', function() {
+  console.log('\nHello Azuki!\n');
+});
