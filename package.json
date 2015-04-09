@@ -30,7 +30,7 @@
     "ramda": "^0.13.0"
   },
   "devDependencies": {
-    "azk-dev": "0.0.5"
+    "azk-dev": "0.0.7"
   },
   "engineStrict": true,
   "engines": {
