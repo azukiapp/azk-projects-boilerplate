@@ -16,7 +16,7 @@ Search for `azk-projects-boilerplate` to find what have to be changed before upl
     $ git init
     ```
 
-- Install/Update dependêncies:
+- Install/Update dependencies:
 
     ```shell
     $ npm install --save-dev azk-dev
@@ -43,13 +43,14 @@ $ gulp help
 #### Tests
 
 ```shell
+# default (lint + test, no watch)
+$ gulp lint test
+
 # test + lint + watch
-$ gulp
-# or
-$ gulp test
+$ gulp watch:lint:test
 
 # test + watch (no-lint)
-$ gulp test-no-lint
+$ watch:test
 ```
 
 

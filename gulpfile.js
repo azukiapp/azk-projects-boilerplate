@@ -5,6 +5,6 @@ var azk_gulp = require('azk-dev/gulp')({
 
 var gulp = azk_gulp.gulp;
 
-gulp.task('sample', 'This is a sample task', function() {
+gulp.task('__sample__', 'This is a sample task', function() {
   console.log('\nHello Azuki!\n');
 });
