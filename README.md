@@ -50,7 +50,7 @@ $ gulp lint test
 $ gulp watch:lint:test
 
 # test + watch (no-lint)
-$ watch:test
+$ gulp watch:test
 ```
 
 
