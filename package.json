@@ -4,8 +4,8 @@
   "description": "azk-projects-boilerplate",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "./node_modules/.bin/gulp test",
+    "start" : "node index.js",
+    "test"  : "./node_modules/.bin/gulp lint test",
     "deploy": "./node_modules/.bin/npm-deploy"
   },
   "repository": {
@@ -25,9 +25,10 @@
   "homepage": "https://github.com/azukiapp/azk-projects-boilerplate",
   "dependencies": {
     "bluebird": "^2.9.24",
-    "colors": "^1.0.3",
+    "chalk": "^1.0.3",
     "nopt": "^3.0.1",
-    "ramda": "^0.13.0"
+    "ramda": "^0.13.0",
+    "source-map-support": "^0.2.10"
   },
   "devDependencies": {
     "azk-dev": "0.0.7"

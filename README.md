@@ -7,32 +7,63 @@ Search for `azk-projects-boilerplate` to find what have to be changed before upl
 - **spec**: all files will transpiled with babel to lib/spec
 - **bin**:  no ocours transpilation here
 
-#### before start
+#### Before start development
 
-```
-$ npm install
+- Reset git:
+
+    ```shell
+    $ rm -rf .git
+    $ git init
+    ```
+
+- Install/Update dependêncies:
+
+    ```shell
+    $ npm install --save-dev azk-dev
+    $ gulp editor:config
+    $ gulp babel:runtime:install
+    $ npm install
+    ```
+
+- Commit
+
+    ```shell
+    $ git add .
+    $ git commit -m 'Start the project based on the `azk-projects-boilerplate`.'
+    ```
+
+## azk-dev
+
+Show all gulp tasks:
+
+```shell
+$ gulp help
 ```
 
-#### test + lint (no watch)
+#### Tests
 
-```
+```shell
+# test + lint + watch
 $ gulp
-```
-
-#### test + lint + watch
-
-```
+# or
 $ gulp test
-```
 
-#### test + watch (no-lint)
-
-```
+# test + watch (no-lint)
 $ gulp test-no-lint
 ```
 
-#### publish a patch to npm
 
+#### Deploy npm package
+
+You can deploy package with:
+
+```shell
+$ npm run deploy [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease]
 ```
-$ npm run-script patch
-```
+
+This should run the following steps:
+
+  - Check if not tracked commits in git
+  - Run tests with `npm test`
+  - Upgrade version in `package.json`, commit and add tag
+  - Publish package in npmjs.com
