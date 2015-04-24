@@ -32,3 +32,5 @@ lib/
 
 # azk
 .azk/
+.env
+**/.env
