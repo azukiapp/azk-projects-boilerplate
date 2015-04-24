@@ -4,8 +4,8 @@
   "description": "azk-projects-boilerplate",
   "main": "index.js",
   "scripts": {
-    "start" : "node index.js",
-    "test"  : "./node_modules/.bin/gulp lint test",
+    "start": "node index.js",
+    "test": "./node_modules/.bin/gulp lint test",
     "deploy": "./node_modules/.bin/npm-deploy"
   },
   "repository": {
@@ -31,7 +31,9 @@
     "source-map-support": "^0.2.10"
   },
   "devDependencies": {
-    "azk-dev": "0.0.7"
+    "azk-dev": "0.0.15",
+    "babel-runtime": "^5.1.11",
+    "gulp": "^3.8.11"
   },
   "engineStrict": true,
   "engines": {
